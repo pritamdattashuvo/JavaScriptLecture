@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Naztech tutorial</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		.container{
+			margin-top: 50px;
+		}	
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h4 style="text-align: center">Working with JSON</h4>
+		<table class="table table-striped table-dark">
+		<tr class="">
+			<td>
+			Name: <input id="name" type="text" name="">
+			</td>
+			<td>
+			Phone: <input id="phone" type="text" name="">
+			</td>
+		</tr>
+		<tr class="">
+			<td>
+			Email: <input id="email" type="text" name="">
+			</td>
+			<td>
+			Address: <input id="address" type="text" name="">
+			</td>
+		</tr>
+		<tr class="">
+			<td>
+			Department: <input id="department" type="text" name="">
+			<!-- to disable the field : disabled="true" -->
+			</td>
+			<td>
+			CGPA: <input id="cgpa" type="text" name="">
+			</td>
+		</tr>
+		<tr class="">
+			<td><button class="btn btn-success btn-sm btn-block" type="submit" onclick="show()">Submit</button></td>
+			<td></td>
+		</tr>
+	</table>
+
+	<script>
+		function show()
+		{
+			var name = document.getElementById("name");
+			var phone = document.getElementById("phone");
+			var email = document.getElementById("email");
+			var address = document.getElementById("address");
+			var department = document.getElementById("department");
+			var cgpa = document.getElementById("cgpa");
+			// console.log(x1.value);
+			var Details ={
+				"name1":name.value,
+				"phone1":phone.value,
+				"email1":email.value,
+				"address1":address.value,
+				"department1":department.value,
+				"cgpa1":cgpa.value
+			};
+
+			// console.log(Details.name+" "+Details.phone+" "+Details.email+" "+Details.address+" "+Details.department+" "+Details.cgpa);
+			// console.log(Details);
+			x="Name: "+Details.name1+"\n Phone: "+Details.phone1+"\n Email: "+Details.email1+"\n Address: "+Details.address1+" Dept.: "+Details.department1+"\n CGPA: "+Details.cgpa1;
+			document.getElementById("demo").innerHTML=x;//if you don't use paragraph with demo and innerHTML , than use .value instead of .innerHTML
+		}
+
+
+	</script>
+	<!-- 2nd Practice -->
+	<script>
+	
+	</script>
+	<!-- <button onclick="person.add()">Click Here</button> -->
+	
+
+	<script>
+	
+	</script>
+	<p id="demo"></p>
+	</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
