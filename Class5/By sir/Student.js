@@ -6,6 +6,6 @@ Ext.define('Student',{
 		this.schooleName=schooleName ||'UnKnown';
 	},
 	getSchoolName:function(){
-		return "From Parent Class /n"+this.schooleName + 'Name = ' +this.name;
+		return "From Parent Class </br>School: "+this.schooleName+'</br>' + 'Name = ' +this.name;
 	}
 });
