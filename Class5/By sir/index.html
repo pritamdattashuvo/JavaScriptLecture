@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" 
+	rel = "stylesheet" />
+	<script type = "text/javascript" 
+	src = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+	<script type="text/javascript" src="Student.js"></script>
+	<script type="text/javascript" src="Person.js"></script>
+
+	<script type = "text/javascript">
+		Ext.onReady(function(){
+			
+			var student=new Ext.create('Student', 'XYZ','ABC School');
+			
+			document.write(student.getName()+'<br/>');
+			document.write(student.getSchoolName()+'<br/>');
+		});
+	</script>
+</head>
+
+<body>
+	<div id = "helloWorldPanel" />
+</body>
+</html>
