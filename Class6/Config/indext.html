@@ -1,0 +1,39 @@
+<!-- Config -->
+<!DOCTYPE html>
+<html>
+<head>
+	<link href = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" 
+	rel = "stylesheet" />
+	<script type = "text/javascript" 
+	src = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+	<script type="text/javascript" src="Student.js"></script>
+	<script type="text/javascript" src="Employee.js"></script>
+
+	<script type = "text/javascript">
+		Ext.onReady(function(){
+			var newStudent = Ext.create('Student',{
+				name:'Pritam Datta',
+				universityName:'East West University'
+			});
+
+			document.write("Name is: "+newStudent.getName());
+			document.write("<br>Uniersity: "+newStudent.getUniversityName());
+
+			newStudent.setName('Debu');
+			newStudent.setUniversityName('North South University');
+
+			document.write("<br>Name is: "+newStudent.getName());
+			document.write("<br>Uniersity: "+newStudent.getUniversityName());
+
+			var st=Ext.create('Employee');
+			st.setSalary('2054560');
+			var salary = st.getSalary();
+			document.write("<br>Employee Salary: "+salary);
+		});
+	</script>
+</head>
+
+<body>
+	
+</body>
+</html>

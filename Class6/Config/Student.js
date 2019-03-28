@@ -1,0 +1,9 @@
+Ext.define('Student',{
+	config:{
+		name:'',
+		universityName:''
+	},
+	constructor:function(config){
+		this.initConfig(config);
+	}
+});
