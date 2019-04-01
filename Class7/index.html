@@ -1,0 +1,95 @@
+<!-- Event Handling -->
+<!DOCTYPE html>
+<html>
+   <head>
+      <link href = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" 
+         rel = "stylesheet" />
+      <script type = "text/javascript" 
+         src = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+      
+      <script type = "text/javascript">
+         Ext.onReady(function() {
+            var button1 = Ext.create('Ext.Button',{
+            	renderTo: Ext.getElementById('helloworld'),
+            	text:'Hide',
+            	scale:'large',
+            	width: 150,
+            	listeners:{
+            		click:function(){
+            			// Ext.MessageBox.alert('Future:','Pritam the Billionaire');
+            			// Ext.toast('toast toast toast toast toast',5000)
+            			Ext.get('demo').hide();
+            		},
+            		myEvent: function(button) {
+                     Ext.MessageBox.alert('Surprise!!!', 'My custom event is called after 5000milisec');
+                  	}
+            	}
+            });
+
+            var button2 = Ext.create('Ext.Button',{
+            	renderTo: Ext.getElementById('helloworld'),
+            	text:'Show',
+            	scale:'large',
+            	width: 150,
+            	listeners:{
+            		click:function(){
+            			Ext.get('demo').show();
+            		}
+            	}
+            });
+
+            Ext.defer(function(){
+            	button1.fireEvent('myEvent');
+            },5000);
+
+            Ext.create('Ext.form.Panel',{
+            	width:760,
+            	height:300,
+            	title:'Registration Form',
+            	renderTo:'helloworld',
+            	margin:'10 10 10 250',
+            	items:[
+            		{
+            			xtype:'textfield',
+            			name:'username',
+            			id:'unique',
+            			fieldLabel:'Name'
+            		},
+            		{
+            			xtype:'textfield',
+            			name:'email',
+            			fieldLabel:'Email'
+            		},
+            		{
+            			xtype:'datefield',
+            			fieldLabel: 'Date of Birth',
+            			name:'birthDate'
+            		},{
+            			xtype:'textfield',
+            			name:'password',
+            			fieldLabel:'Password'
+            		},{
+            			xtype:'button',
+            			text:'Button',
+            			scale:'large',
+            			handler://you can use listeners or handlers
+      						function(){
+            					// Ext.MessageBox.alert('Message','got you');
+            					var n = Ext.getCmp('unique').getValue();
+            					Ext.toast(n);
+            				}
+            			
+            		}
+            	]
+            });
+            
+         });
+      </script>
+   </head>
+   
+   <body>
+   	  
+      <div id = "helloworld" />
+      <p id="demo">Pain is Gain [The event will be called after 5 seconds when the page is loaded]</p>
+   </body>
+</html>
