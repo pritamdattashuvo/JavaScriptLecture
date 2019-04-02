@@ -1,0 +1,163 @@
+<!-- <!-- BY SIR -->
+<!DOCTYPE html>
+<html>
+<head>
+	<link href = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" rel = "stylesheet" />
+	<script type = "text/javascript" 
+	src = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+	<script type = "text/javascript">
+		Ext.onReady(function() {
+			Ext.create(Ext.form.Panel,{
+				title:'Registration',
+				margin:'40 0 0 40',
+				bodyPadding:'40 0 0 40',
+				renderTo: Ext.getBody(),
+				width:960,
+				height:400,
+				items:[
+				{
+					xtype:'textfield',
+					name:'userName',
+					id:'userName',
+					fieldLabel:'User Name'
+
+				},
+				{
+					xtype:'textfield',
+					name:'password',
+					id:'password',
+					fieldLabel:'Password',
+					inputType:'password'
+
+				},
+				{
+					xtype:'textfield',
+					name:'phone',
+					id:'phone',
+					fieldLabel:'Phone',
+					inputType:'number'
+
+				},
+				{
+					xtype:'textfield',
+					name:'email',
+					id:'email',
+					fieldLabel:'Email'
+
+				},
+				{
+					xtype:'radio',
+					name:'gender',
+					id:'r1',
+					boxLabel:'Male',
+					inputValue:'Male',
+					listeners:{
+						change:function(field,newValue,oldValue){
+							if (newValue) {
+								alert(field.boxLabel+' Is Clicked');
+							}
+						}
+					}
+				},
+				{
+					xtype:'radio',
+					name:'gender',
+					id:'r2',
+					boxLabel:'FeMale',
+					inputValue:'FeMale',
+					listeners:{
+						change:function(field,newValue,oldValue){
+							if (newValue) {
+								alert(field.boxLabel+' Is Clicked');
+							}
+						}
+					}
+				},
+				{
+					xtype:'radio',
+					name:'gender',
+					id:'r3',
+					boxLabel:'Others',
+					inputValue:'Others',
+					listeners:{
+						change:function(field,newValue,oldValue){
+							if (newValue) {
+								alert(field.boxLabel+' Is Clicked');
+							}
+						}
+					}
+
+				},
+				{
+					fieldLabel:'Education',
+					xtype:'checkbox',
+					name:'gender',
+					id:'ckbx1',
+					boxLabel:'SSC'
+				},
+				{
+					fieldLabel:'Education',	
+					xtype:'checkbox',
+					name:'gender',
+					id:'ckbx2',
+					boxLabel:'HSC'
+				},
+				{
+					fieldLabel:'Education',
+					xtype:'checkbox',
+					name:'gender',
+					id:'ckbx3',
+					boxLabel:'BSC'
+				},
+				{
+					xtype:'button',
+					name:'submit',
+					id:'submit',
+					text:'Log in',
+					handler:function(){
+					/*var radio1 = Ext.getCmp('r1'),
+					radio2 = Ext.getCmp('r2'),
+					radio3 = Ext.getCmp('r3');
+
+
+					if (radio2.getValue()) {
+					radio1.setValue(true);
+					alert(radio1.getInputValue());
+					return;
+					}
+
+
+					if (radio3.getValue()) {
+					radio2.setValue(true);
+					alert(radio2.getInputValue());
+					return;
+					}
+
+
+					radio1.setValue(true);*/
+
+						Ext.MessageBox.alert("Name = "+Ext.getCmp('userName').getValue()+" Email = "+Ext.getCmp('email').getValue()+" Gender = "+field.boxLabel);
+					}
+}],
+});
+
+		});
+
+
+
+	</script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<p id="para"></p>
+	<div id = "BC" />
+	<div id = "BC1" />
+	<div id = "BC2" />
+	<div id="formPanel"/>
+
+</div>
+</body>
+</html> -->

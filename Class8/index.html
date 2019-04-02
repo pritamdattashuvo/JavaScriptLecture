@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link href = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" 
+   rel = "stylesheet" />
+   <script type = "text/javascript" 
+   src = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+
+   <script type = "text/javascript">
+      Ext.onReady(function() {
+         Ext.create('Ext.form.Panel', {
+            width:600,
+            height:350,
+            title:'UI',
+            renderTo:'helloworld',
+            margin:'10 10 10 250',
+            items:[
+            {
+               xtype:'textfield',
+               name:'name',
+               id:'nameid',
+               fieldLabel:'Name',
+               allowBlank: false,
+               vtype:'alpha'
+            },{
+               xtype:'textfield',
+               name:'password',
+               id:'passwordid',
+               fieldLabel:'Password',
+               inputType:'password'
+            },{
+               xtype:'textfield',
+               name:'phone',
+               id:'phoneid',
+               inputType:'number',
+               fieldLabel:'Phone'
+               // validator:function(val){
+               //    var x = val.replace(/[^0-9]/g,'');
+               //    if(x.length==11||x.length==15){
+               //       alert("Valid Phone Number");
+               //    }else{
+               //       alert("Invalid Phone Number");
+               //    }
+               // }
+            },{
+               xtype:'textfield',
+               name:'email',
+               id:'emailid',
+               fieldLabel:'Email',
+               vtype:'email'
+            },{
+               xtype:'fieldcontainer',
+               fieldLabel:'Gender',
+               defaultType:'radiofield',
+               defaults:{
+                  flex:1
+               },
+               layout:'hbox',
+               items:[
+               {
+                  boxLabel:'Male',
+                  inputValue:'male',
+                  name:'gender',
+                  id:'mid',
+                  listeners:{
+                     change:function(field,newValue,oldValue){
+                        if (newValue) {
+                           alert(field.boxLabel+' Is Clicked');
+                           
+                        }
+                     }
+                  }
+               },
+               {
+                  boxLabel:'Female',
+                  inputValue:'female',
+                  id:'fid',
+                  name:'gender',
+                  listeners:{
+                     change:function(field,newValue,oldValue){
+                        if (newValue) {
+                           alert(field.boxLabel+' Is Clicked');
+                           
+                        }
+                     }
+                  }
+               }
+               ]
+            },{
+               xtype:'fieldcontainer',
+               fieldLabel:'Education',
+               defaultType:'checkboxfield',
+               items:[{
+                  boxLabel:'SSC',
+                  inputValue:'ssc',
+                  id:'sscid',
+                  listeners:{
+                     change:function(field,newValue,oldValue){
+                        if (newValue) {
+                           alert(field.boxLabel+' Is Clicked');
+                        }
+                     }
+                  }
+               },{
+                  boxLabel:'HSC',
+                  inputValue:'hsc',
+                  id:'hscid',
+                  listeners:{
+                     change:function(field,newValue,oldValue){
+                        if (newValue) {
+                           alert(field.boxLabel+' Is Clicked');
+                        }
+                     }
+                  }
+               },{
+                  boxLabel:'B.Sc',
+                  inputValue:'bsc',
+                  id:'bscid',
+                  checked   : true,
+                  listeners:{
+                     change:function(field,newValue,oldValue){
+                        if (newValue) {
+                           alert(field.boxLabel+' Is Clicked');
+                        }
+                     }
+                  }
+               },{
+                  boxLabel:'M.Sc',
+                  inputValue:'msc',
+                  id:'mscid',
+                  listeners:{
+                     change:function(field,newValue,oldValue){
+                        if (newValue) {
+                           alert(field.boxLabel+' Is Clicked');
+                        }
+                     }
+                  }
+               }
+               ]
+            },{
+               xtype:'button',
+               text:'submit',
+               scale:'large',
+               listeners:{
+                  click:function(){
+                     var namevar = Ext.getCmp('nameid').getValue();
+                     var passvar = Ext.getCmp('passwordid').getValue();
+                     var phonevar = Ext.getCmp('phoneid').getValue();
+                     var emailvar = Ext.getCmp('emailid').getValue();
+                     var malevar = Ext.getCmp('mid').getValue();
+                     var femalevar = Ext.getCmp('fid').getValue();
+                     var sscvar = Ext.getCmp('sscid').getValue();
+                     var hscvar = Ext.getCmp('hscid').getValue();
+                     var bscvar = Ext.getCmp('bscid').getValue();
+                     var mscvar = Ext.getCmp('mscid').getValue();
+                     
+                     
+                     Ext.MessageBox.alert("Name: "+namevar+"<br>Phone: "+phonevar+
+                        "<br>Email: "+emailvar+"<br>Gender: ");
+                  }
+               }
+            }
+            ]
+         });
+});
+</script>
+</head>
+
+<body>
+   <div id = "helloworld"></div>
+</body>
+</html>
