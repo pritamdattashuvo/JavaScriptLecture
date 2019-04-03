@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Component</title>
+	<link href = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" 
+	rel = "stylesheet" />
+	<script type = "text/javascript" 
+	src = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+	<script type = "text/javascript">
+		Ext.onReady(function () {
+
+			Ext.create('Ext.Button', {
+				renderTo: Ext.getElementById('btn1'),
+				text: 'x',
+				listeners:{
+					click: function(){
+						component1.hide();
+						Ext.toast("Hide Called");
+					}
+				}
+			});
+			Ext.create('Ext.Button', {
+				renderTo: Ext.getElementById('btn2'),
+				text: 'Show',
+				listeners:{
+					click: function(){
+						component1.show();
+						Ext.toast("show Called");
+					}
+				}
+			});
+			var component1=Ext.create('Ext.Component', {
+				id:'myComponent',
+				html: 'Hello world!',
+				margin:'10 0 0 20',
+				width: 960,
+				height: 200,
+				padding: 20,
+				style: {
+					color: '#FFFFFF',
+					backgroundColor:'#000000'
+				},
+				renderTo: Ext.getElementById('div1')
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id='btn1'></div>
+	<div id='btn2'></div>
+	<div id="div1">
+
+	</div>
+</body>
+</html>
